@@ -6,10 +6,12 @@ set -e -x
 # Add the pulumi CLI to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
 
-yarn install
-pulumi stack select product-catalog-service
+cd pulumi
+
+pip3 install -r requirements.txt
+pulumi stack select eks-explorer
 # The following is just a sample config setting that the hypothetical pulumi
 # program needs.
 # Learn more about pulumi configuration at: https://www.pulumi.com/docs/intro/concepts/config/
-pulumi config set mysetting myvalue
+# pulumi config set mysetting myvalue
 pulumi preview --yes
