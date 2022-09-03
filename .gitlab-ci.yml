@@ -13,7 +13,7 @@ sast:
   stage: test
 
 pulumi:
-  statge: infrastructure-update
+  stage: infrastructure-update
   before_script:
     - chmod +x ./scripts/*.sh
     - ./scripts/setup.sh
