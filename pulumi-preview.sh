@@ -14,4 +14,4 @@ pulumi stack select eks
 # program needs.
 # Learn more about pulumi configuration at: https://www.pulumi.com/docs/intro/concepts/config/
 # pulumi config set mysetting myvalue
-pulumi preview --yes
+pulumi preview
