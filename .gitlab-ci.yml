@@ -15,10 +15,10 @@ sast:
 pulumi:
   stage: infrastructure-update
   before_script:
-    - chmod +x ./scripts/*.sh
-    - ./scripts/setup.sh
+    - chmod +x ./*.sh
+    - ./setup.sh
   script:
-    - ./scripts/run-pulumi.sh
+    - ./run-pulumi.sh
   # Create an artifact archive with just the pulumi log file,
   # which is created using console-redirection in run-pulumi.sh.
   artifacts:
@@ -34,10 +34,10 @@ pulumi:
 pulumi-preview:
   stage: infrastructure-update
   before_script:
-    - chmod +x ./scripts/*.sh
-    - ./scripts/setup.sh
+    - chmod +x ./*.sh
+    - ./setup.sh
   script:
-    - ./scripts/pulumi-preview.sh
+    - ./pulumi-preview.sh
   only:
   - merge_requests
 
