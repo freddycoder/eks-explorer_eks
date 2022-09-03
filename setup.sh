@@ -14,3 +14,4 @@ apt-get install sudo -y
 # install python dependencies
 apt-get install python3-pip -y
 pip3 install --upgrade pip
+apt-get install python3-venv -y
