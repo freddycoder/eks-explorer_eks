@@ -9,7 +9,7 @@ export PATH=$PATH:$HOME/.pulumi/bin
 cd pulumi
 
 pip3 install -r requirements.txt
-pulumi stack select eks-explorer
+pulumi stack select eks
 # The following is just a sample config setting that the hypothetical pulumi
 # program needs.
 # Learn more about pulumi configuration at: https://www.pulumi.com/docs/intro/concepts/config/
