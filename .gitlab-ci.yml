@@ -7,7 +7,39 @@
 # See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
 stages:
 - test
+- infrastructure-update
+
 sast:
   stage: test
+
+pulumi:
+  statge: infrastructure-update
+  before_script:
+    - chmod +x ./scripts/*.sh
+    - ./scripts/setup.sh
+  script:
+    - ./scripts/run-pulumi.sh
+  # Create an artifact archive with just the pulumi log file,
+  # which is created using console-redirection in run-pulumi.sh.
+  artifacts:
+    paths:
+    - pulumi-log.txt
+    # This is just a sample of how artifacts can be expired (removed) automatically in GitLab.
+    # You may choose to not set this at all based on your organization's or team's preference.
+    expire_in: 1 week
+  # This job should only be created if the pipeline is created for the main branch.
+  only:
+  - main
+
+pulumi-preview:
+  stage: infrastructure-update
+  before_script:
+    - chmod +x ./scripts/*.sh
+    - ./scripts/setup.sh
+  script:
+    - ./scripts/pulumi-preview.sh
+  only:
+  - merge_requests
+
 include:
 - template: Security/SAST.gitlab-ci.yml
