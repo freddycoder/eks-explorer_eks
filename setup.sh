@@ -11,7 +11,8 @@ pulumi login
 # update the GitLab Runner's packages
 apt-get update -y
 apt-get install sudo -y
+# nodejs
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+apt-get install -y nodejs
 # install python dependencies
-apt-get install python3-pip -y
-pip3 install --upgrade pip
 apt-get install python3-venv -y
