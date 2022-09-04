@@ -15,6 +15,13 @@ pulumi login
 apt-get update -y
 apt-get install sudo -y
 
+# Install kubectl
+apt-get install -y ca-certificates curl
+curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+apt-get update -y
+apt-get install -y kubectl
+
 # nodejs
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 apt-get install -y nodejs
