@@ -14,6 +14,7 @@ sast:
 
 pulumi:
   stage: infrastructure-update
+  image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
   before_script:
     - chmod +x ./*.sh
     - ./setup.sh
@@ -33,6 +34,7 @@ pulumi:
 
 pulumi-preview:
   stage: infrastructure-update
+  image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
   before_script:
     - chmod +x ./*.sh
     - ./setup.sh

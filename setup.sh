@@ -15,9 +15,6 @@ pulumi login
 apt-get update -y
 apt-get install sudo -y
 
-apk update
-apk add make automake gcc g++ subversion python3-dev
-
 # nodejs
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 apt-get install -y nodejs
