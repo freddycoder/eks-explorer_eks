@@ -1,0 +1,6 @@
+name: eks-explorer
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: A projet to explore eks, gitlab and pulumi stack
