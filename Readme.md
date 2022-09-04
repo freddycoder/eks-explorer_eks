@@ -15,3 +15,16 @@ This repos contains code for deploying a kubernetes cluster on AWS EKS using pul
 - cd into the pulumi folder
 - Run ```pulumi new```
 - gitlab-ci.yml was edited folloing the instruction of this page [Pulumi GitLab CI](https://www.pulumi.com/docs/guides/continuous-delivery/gitlab-ci/)
+- Then through this [merge request](https://gitlab.com/eks-explorer/eks/-/merge_requests/1) every error was fixed
+
+## Permission of the AWS user
+
+The AWS user needs to have the following permissions:
+- AmazonEC2FullAccess
+- AmazonEKSClusterPolicy
+- AmazonEKSWorkerNodePolicy
+- AmazonEKSServicePolicy
+- AmazonEKS_CNI_Policy
+- AmazonEKSFargatePodExecutionRolePolicy
+- AmazonEKSLocalOutpostClusterPolicy
+- AmazonEKSVPCResourceController
